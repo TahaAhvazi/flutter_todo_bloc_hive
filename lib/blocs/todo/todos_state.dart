@@ -5,16 +5,18 @@ abstract class TodosState extends Equatable {
 
   @override
   List<Object> get props => [];
+
+  get tasks => null;
 }
 
 class TodosInitial extends TodosState {}
 
 // This class or state will show the TODOS
 class TodosLoadedState extends TodosState {
-  final List<Task> task;
+  final List<Task> tasks;
 
-  TodosLoadedState(this.task);
+  TodosLoadedState(this.tasks);
   @override
   // TODO: implement props
-  List<Object> get props => [task];
+  List<Object> get props => [tasks];
 }

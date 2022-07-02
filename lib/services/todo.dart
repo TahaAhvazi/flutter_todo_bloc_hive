@@ -6,6 +6,14 @@ class TodosService {
   Future<void> init() async {
     Hive.registerAdapter(TaskAdapter());
     _task = await Hive.openBox('tasks');
+
+    _task.clear();
+
+    await _task.add(Task('Taha', 'Clean the Room', true));
+    await _task.add(Task('Taha', 'Read the book', true));
+    await _task.add(Task('Taha', 'Go to the GYM', false));
+    await _task.add(Task('ali', 'Go to the GYM', false));
+    await _task.add(Task('ali', 'Go to the GYM', true));
   }
 
   Future<List<Task>> getTasks(final String username) async {

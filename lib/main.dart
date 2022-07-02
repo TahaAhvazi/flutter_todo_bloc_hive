@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:todo_bloc_hive/routes/homepage.dart';
 import 'package:todo_bloc_hive/services/auth.dart';
+import 'package:todo_bloc_hive/services/todo.dart';
 
-void main() {
+void main() async {
+  await Hive.init;
   runApp(const MyApp());
 }
 
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
         RepositoryProvider(
           create: (context) => AuthenticationService(),
         ),
+        RepositoryProvider(
+          create: (context) => TodosService(),
+        )
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
