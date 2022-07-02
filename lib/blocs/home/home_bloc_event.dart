@@ -23,3 +23,9 @@ class LoginEvent extends HomeBlocEvent {
     return 'Authentication event (USERNAME : $username PASSWORD: $password)';
   }
 }
+
+class RegisterServiceEvent extends HomeBlocEvent {
+  @override
+  // TODO: implement props
+  List<Object> get props => [];
+}

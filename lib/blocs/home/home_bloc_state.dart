@@ -9,8 +9,14 @@ class HomeState extends Equatable {
 
 class SuccesfulLogin extends HomeState {
   final String username;
-  SuccesfulLogin({required this.username});
+  SuccesfulLogin(this.username);
 
   @override
   List<Object?> get props => [username];
+}
+
+class RegisteringServicesState extends HomeState {
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
 }
