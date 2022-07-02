@@ -22,4 +22,15 @@ class TodosService {
         (element) => element.task == myTask && element.user == username);
     await task.delete();
   }
+
+  void updateTask(
+      final String mytask, final String username, final bool? completed) async {
+    final taskToEdit = _task.values.firstWhere(
+        (element) => element.user == username && element.task == mytask);
+    final index = taskToEdit.key as int;
+    _task.put(
+      index,
+      Task(username, mytask, completed ?? taskToEdit.completed),
+    );
+  }
 }
