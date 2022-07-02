@@ -16,4 +16,10 @@ class LoginEvent extends HomeBlocEvent {
   @override
   // TODO: implement props
   List<Object> get props => [username, password];
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return 'Authentication event (USERNAME : $username PASSWORD: $password)';
+  }
 }

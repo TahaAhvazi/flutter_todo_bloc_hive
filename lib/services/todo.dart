@@ -28,7 +28,7 @@ class TodosService {
     final taskToEdit = _task.values.firstWhere(
         (element) => element.user == username && element.task == mytask);
     final index = taskToEdit.key as int;
-    _task.put(
+    await _task.put(
       index,
       Task(username, mytask, completed ?? taskToEdit.completed),
     );
